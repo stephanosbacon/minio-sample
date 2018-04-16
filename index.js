@@ -1,4 +1,4 @@
-var Minio = require('minio');
+mvar Minio = require('minio');
 
 var minioClient = new Minio.Client({
     endPoint: 'minio-service.minio.svc',
@@ -13,6 +13,8 @@ console.log('here');
 var done = false;
 
 minioClient.makeBucket('mybucket', 'us-east-1', function(err) {
+  console.log('In the make bucket callback');
+  
   if (err) {
     console.log('Error creating bucket.', err);
     return;
