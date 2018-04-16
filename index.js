@@ -8,6 +8,8 @@ var minioClient = new Minio.Client({
     secretKey: 'minio123'
 });
 
+console.log('here');
+
 minioClient.makeBucket('mybucket', 'us-east-1', function(err) {
   if (err) {
     console.log('Error creating bucket.', err);
@@ -16,11 +18,16 @@ minioClient.makeBucket('mybucket', 'us-east-1', function(err) {
   console.log('Bucket created successfully in "us-east-1".');
 });
 
+console.log('after bucket');
+
 var buffer = 'Hello World';
 
 minioClient.putObject('mybucket', 'hello-file', buffer, function(err, etag) {
-  return console.log(err, etag); // err should be null
+  console.log(err, etag); // err should be null
 });
+
+console.log('after put');
+
 
 var size = 0;
 
