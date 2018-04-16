@@ -55,7 +55,6 @@ minioClient.makeBucket('mybucket', 'us-east-1', function(err) {
 });
 
 while (done == false) {
-  console.log('waiting');
 }
 
 
