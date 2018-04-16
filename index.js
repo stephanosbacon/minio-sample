@@ -19,7 +19,7 @@ minioClient.makeBucket('mybucket', 'us-east-1', function(err) {
   }
   console.log('Bucket created successfully in "us-east-1".');
 
-  console.log('after bucket');
+  console.log('in create bucket callback, trying a putObject');
 
   var buffer = 'Hello World';
 
@@ -27,7 +27,7 @@ minioClient.makeBucket('mybucket', 'us-east-1', function(err) {
     console.log(err, etag); // err should be null
 
     var size = 0;
-  console.log('after put');
+    console.log('in put callback');
 
     minioClient.getObject('mybucket', 'hello-file', function(err, dataStream) {
       if (err) {
